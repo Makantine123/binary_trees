@@ -56,7 +56,7 @@ Please use the following data structures and types for binary trees. Don’t for
     struct binary_tree_s *left;
     struct binary_tree_s *right;
  };
- 
+
  typedef struct binary_tree_s binary_tree_t;
  ```
  **Binary Search Tree**
