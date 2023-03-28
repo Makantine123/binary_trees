@@ -1,3 +1,2 @@
 .ccls-cache/
-*.main.c
-*.exe
+[0-9].main.c
