@@ -7,6 +7,9 @@
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	if (tree == NULL)
+		return (0);
+
 	return (isvalid_bst(tree, INT_MIN, INT_MAX));
 }
 
@@ -23,7 +26,7 @@ int isvalid_bst(const binary_tree_t *tree, int minVal, int maxVal)
 	if (!tree)
 		return (1);
 
-	if (tree->n < minVal || tree->n > maxVal)
+	if (tree->n <= minVal || tree->n >= maxVal)
 		return (0);
 
 	return (isvalid_bst(tree->left, minVal, tree->n) &&
