@@ -2,7 +2,7 @@
 /**
  * binary_tree_levelorder - Function goes through binary tree
  * using level-order tranversal
- * @tre: Pointer to the root node of the tree to transverse
+ * @tree: Pointer to the root node of the tree to transverse
  * @func: Pointer to function to for eack node
  *
  * Return: Nothing, do nothing if tree or func is null
@@ -38,8 +38,10 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	if (!tree)
 		return (0);
-	/**if (tree->left == NULL && tree->right == NULL)
-		return (0);*/
+	/**
+	 * if (tree->left == NULL && tree->right == NULL)
+	 * return (0);
+	 */
 
 	left_height = binary_tree_height(tree->left) + 1;
 	right_height = binary_tree_height(tree->right) + 1;
