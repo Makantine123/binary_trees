@@ -21,7 +21,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
  * tree_is_complete - Checks if tree is complete
  * @tree: Pointer to the tree node
  * @i: Node inded
- * @c_nodes: Node count
+ * @cnodes: Node count
  * Return: 1 if tree is complete, else 0
  */
 int tree_is_complete(const binary_tree_t *tree, int i, int cnodes)
