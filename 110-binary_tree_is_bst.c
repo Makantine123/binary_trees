@@ -7,7 +7,7 @@
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	return isvalid_bst(tree, INT_MIN, INT_MAX);
+	return (isvalid_bst(tree, INT_MIN, INT_MAX));
 }
 
 /**
@@ -18,7 +18,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
  *
  * Return: 1 success, 0 otherwise
  */
-int isvalid_bst(binary_tree_t *tree, int minVal, int maxVal)
+int isvalid_bst(const binary_tree_t *tree, int minVal, int maxVal)
 {
 	if (!tree)
 		return (1);
@@ -26,6 +26,6 @@ int isvalid_bst(binary_tree_t *tree, int minVal, int maxVal)
 	if (tree->n <= minVal || tree->n >= maxVal)
 		return (0);
 
-	return isvalid_bst(tree->left, minVal, tree->n) &&
-		isvalid_bst(tree->right, tree->n, maxVal);
+	return (isvalid_bst(tree->left, minVal, tree->n) &&
+		isvalid_bst(tree->right, tree->n, maxVal));
 }

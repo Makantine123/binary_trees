@@ -59,7 +59,7 @@ int tree_is_complete(const binary_tree_t *tree, int i, int cnodes);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
-int isvalid_bst(binary_tree_t *tree, int minVal, int maxVal);
+int isvalid_bst(const binary_tree_t *tree, int minVal, int maxVal);
 
 
 #endif
