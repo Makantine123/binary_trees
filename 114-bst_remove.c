@@ -16,34 +16,55 @@ bst_t *bst_remove(bst_t *root, int value)
 	if (value < root->n)
 	{
 		root->left = bst_remove(root->left, value);
+		if (root->left)
+		{
+			root->left->parent = root;
+		}
 	}
 	else if (value > root->n)
 	{
 		root->right = bst_remove(root->right, value);
+		if (root->right)
+		{
+			root->right->parent = root;
+		}
 	}
 	else
 	{
-		if (root->left == NULL && root->right == NULL)
+		if (root->left == NULL)
 		{
+			temp = root->right;
 			free(root);
-			return (NULL);
+			return (temp);
 		}
-		else if  (root->left == NULL)
+		else if  (root->right == NULL)
 		{
 			temp = root->left;
 			free(root);
 			return (temp);
 		}
-		else
-		{
-			temp = root->right;
-			while (temp->left != NULL)
-			{
-				temp = temp->left;
-			}
-			root->n = temp->n;
-			root->right = bst_remove(root->right, temp->n);
-		}
+		temp = bst_find_low(root->right);
+		root->n = temp->n;
+		root->right = bst_remove(root->right, temp->n);
+		if (root->right)
+			root->right->parent = root;
 	}
 	return (root);
+}
+
+/**
+ * bst_find_low - Find lowest value in Binary Tree Search
+ *
+ * @tree: BST root or subtree
+ * Return: Node to the tree containing lowest value
+ */
+bst_t *bst_find_lowest(bst_t *tree)
+{
+	bst_t *temp = NULL;
+
+	temp = tree;
+	while (temp && temp->left)
+		temp = temp->left;
+
+	return (temp);
 }
