@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * bst_insert_recursion - Recursive transvers a Binary Search Tree 
+ * bst_insert_recursion - Recursive transvers a Binary Search Tree
  * @tree: Pointer to tree node
  * @value: Value to insert
  *
