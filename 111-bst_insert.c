@@ -1,55 +1,47 @@
-#include "binary_trees.h"
-/**
- * bst_insert_recursion - Recursive transvers a Binary Search Tree
- * @tree: Pointer to tree node
- * @value: Value to insert
- *
- * Return: Pointer to new node, NULL on failure
- */
-bst_t *bst_insert_recursion(bst_t *tree, int value)
-{
-	bst_t *new = NULL;
-
-	if (tree->n > value)
-	{
-		if (tree->left == NULL)
-		{
-			new = binary_tree_node(tree, value);
-			tree->left = new;
-			return (new);
-		}
-		return (bst_insert_recursion(tree->left, value));
-	}
-	if (tree->n < value)
-	{
-		if (tree->right == NULL)
-		{
-			new = binary_tree_node(tree, value);
-			tree->right = new;
-			return (new);
-		}
-		return (bst_insert_recursion(tree->right, value));
-	}
-
-	return (NULL);
-}
+nclude "binary_trees.h"
 
 /**
- * bst_insert - Function inserts a value in Binary Search Tree
- * @tree: Double pointer to root node of BST to insert value
- * @value: Value to store in thr node to be inserted
- *
- * Return: Pointer to created node, or NULL on failure
- */
+ *  * bst_insert - inserts a value in a Binary Search Tree
+ *   *
+ *    * @tree: double pointer to the root node of the BST to insert the value
+ *     * @value: value to store in the node to be inserted
+ *      * Return: pointer to the created node, or NULL on failure
+ *       */
 bst_t *bst_insert(bst_t **tree, int value)
 {
-	bst_t *newNode;
+	bst_t *new, *tree_2;
 
-	if (tree == NULL)
+	if (tree == NULL || *tree == NULL)
 	{
-		newNode = binary_tree_node(NULL, value);
-		*tree = newNode;
-		return (newNode);
+		new = binary_tree_node(NULL, value);
+		*tree = new;
+		return (new);
 	}
-	return (bst_insert_recursion(*tree, value));
+
+	tree_2 = *tree;
+
+	while (tree_2 != NULL)
+	{
+		if (tree_2->n == value)
+			return (NULL);
+		if (tree_2->n > value)
+		{
+			if (tree_2->left == NULL)
+			{
+				tree_2->left = binary_tree_node(tree_2, value);
+				return (tree_2->left);
+			}
+			tree_2 = tree_2->left;
+		}
+		if (tree_2->n < value)
+		{
+			if (tree_2->right == NULL)
+			{
+				tree_2->right = binary_tree_node(tree_2, value);
+				return (tree_2->right);
+			}
+			tree_2 = tree_2->right;
+		}
+	}
+	return (NULL);
 }
