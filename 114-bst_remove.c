@@ -43,7 +43,7 @@ bst_t *bst_remove(bst_t *root, int value)
 			free(root);
 			return (temp);
 		}
-		temp = bst_find_low(root->right);
+		temp = bst_find_lowest(root->right);
 		root->n = temp->n;
 		root->right = bst_remove(root->right, temp->n);
 		if (root->right)
