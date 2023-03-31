@@ -12,7 +12,7 @@ bst_t *bst_search(const bst_t *tree, int value)
 		return (NULL);
 
 	if (tree->n == value)
-		return ((binary_tree_t*) tree);
+		return ((binary_tree_t *) tree);
 
 	if (tree->n < value)
 		return (bst_search(tree->right, value));
