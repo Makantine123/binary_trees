@@ -10,7 +10,7 @@ bst_t *bst_remove(bst_t *root, int value)
 {
 	bst_t *temp = NULL;
 
-	if (root == NULL)
+	if (!root)
 		return (NULL);
 
 	if (value < root->n)
