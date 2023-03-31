@@ -63,6 +63,7 @@ int isvalid_bst(const binary_tree_t *tree, int minVal, int maxVal);
 bst_t *bst_insert(bst_t **tree, int value);
 bst_t *bst_insert_recursion(bst_t *tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
+bst_t *bst_search(const bst_t *tree, int value);
 
 
 #endif
