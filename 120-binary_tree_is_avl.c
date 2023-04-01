@@ -7,6 +7,8 @@
  */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
+	if (tree == NULL)
+		return (0);
 	return (avl_tree_helper(tree, INT_MIN, INT_MAX));
 }
 
@@ -22,6 +24,7 @@ int avl_tree_helper(const binary_tree_t *tree, int min_val, int max_val)
 {
 	if (tree == NULL)
 		return (1);
+
 	if (tree->n <= min_val || tree->n >= max_val)
 		return (0);
 
