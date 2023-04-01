@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * binary_tree_avl - Function checks if a binary tree is a valid AVL Tree
+ * binary_tree_is_avl - Function checks if a binary tree is a valid AVL Tree
  * @tree: Pointer to the root node of the tree to check
  *
  * Return: 1 if tree is avalid AVL Tree, annd 0 otherwise
