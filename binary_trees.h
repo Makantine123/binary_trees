@@ -67,6 +67,7 @@ bst_t *bst_search(const bst_t *tree, int value);
 bst_t *bst_remove(bst_t *root, int value);
 bst_t *bst_find_lowest(bst_t *tree);
 int binary_tree_is_avl(const binary_tree_t *tree);
+int avl_tree_helper(const binary_tree_t *tree, int min_val, int max_val);
 
 
 #endif
