@@ -14,6 +14,8 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 
 	if (!tree)
 		return (1);
+	if (tree == NULL)
+		return (0);
 	if ((heightL - heightR > 1) || (heightL - heightR < -1))
 		return (0);
 
